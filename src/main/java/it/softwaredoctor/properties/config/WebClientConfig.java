@@ -22,10 +22,10 @@ public class WebClientConfig {
 
     @Bean
     public WebClient webClient(WebClient.Builder builder) {
-        String basicAuth = "Basic " + Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+//        String basicAuth = "Basic " + Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
         return builder
                 .baseUrl(sheetDbBaseUrl)
-                .defaultHeader(HttpHeaders.AUTHORIZATION, basicAuth)
+                .defaultHeader(HttpHeaders.AUTHORIZATION, auth)
                 .build();
     }
 }
